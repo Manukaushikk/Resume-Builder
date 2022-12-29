@@ -547,8 +547,8 @@ function Editor(props) {
           ? [...activeInfo.details[0]?.points]
           : ""
         : activeInfo?.points
-        ? [...activeInfo.points]
-        : "",
+          ? [...activeInfo.points]
+          : "",
       title: activeInfo?.details
         ? activeInfo.details[0]?.title || ""
         : activeInfo?.detail?.title || "",
@@ -594,9 +594,8 @@ function Editor(props) {
       <div className={styles.header}>
         {Object.keys(sections)?.map((key) => (
           <div
-            className={`${styles.section} ${
-              activeSectionKey === key ? styles.active : ""
-            }`}
+            className={`${styles.section} ${activeSectionKey === key ? styles.active : ""
+              }`}
             key={key}
             onClick={() => setActiveSectionKey(key)}
           >
@@ -616,27 +615,26 @@ function Editor(props) {
         <div className={styles.chips}>
           {activeInformation?.details
             ? activeInformation?.details?.map((item, index) => (
-                <div
-                  className={`${styles.chip} ${
-                    activeDetailIndex === index ? styles.active : ""
+              <div
+                className={`${styles.chip} ${activeDetailIndex === index ? styles.active : ""
                   }`}
-                  key={item.title + index}
-                  onClick={() => setActiveDetailIndex(index)}
-                >
-                  <p>
-                    {sections[activeSectionKey]} {index + 1}
-                  </p>
-                  <X
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      handleDeleteDetail(index);
-                    }}
-                  />
-                </div>
-              ))
+                key={item.title + index}
+                onClick={() => setActiveDetailIndex(index)}
+              >
+                <p>
+                  {sections[activeSectionKey]} {index + 1}
+                </p>
+                <X
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleDeleteDetail(index);
+                  }}
+                />
+              </div>
+            ))
             : ""}
           {activeInformation?.details &&
-          activeInformation?.details?.length > 0 ? (
+            activeInformation?.details?.length > 0 ? (
             <div className={styles.new} onClick={handleAddNew}>
               +New
             </div>
