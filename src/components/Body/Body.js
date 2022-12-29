@@ -6,7 +6,7 @@ import Editor from "../Editor/Editor";
 import Resume from "../Resume/Resume";
 
 import styles from "./Body.module.css";
-
+                                                                    // MANU KAUSHIK
 function Body() {
   const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
   const sections = {
@@ -68,9 +68,8 @@ function Body() {
             <span
               key={item}
               style={{ backgroundColor: item }}
-              className={`${styles.color} ${
-                activeColor === item ? styles.active : ""
-              }`}
+              className={`${styles.color} ${activeColor === item ? styles.active : ""
+                }`}
               onClick={() => setActiveColor(item)}
             />
           ))}
